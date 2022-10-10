@@ -112,7 +112,7 @@ static uint32_t get_functions_count(pe_ctx_t *ctx, uint64_t offset) {
 				if (thunk_type == 0)
 					return count;
 
-				bool is_ordinal = (thunk_type & IMAGE_ORDINAL_FLAG32) != 0;
+				bool is_ordinal = (thunk_type & IMAGE_ORDINAL_FLAG64) != 0;
 				
 				if (!is_ordinal) {
 					uint64_t imp_ofs = pe_rva2ofs(ctx, thunk->u1.AddressOfData);
